@@ -101,25 +101,13 @@ namespace APP
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(txtTransport.Text))
+                var form = new AddEditForm();
+
+                if (form.ShowDialog() == DialogResult.OK)
                 {
-                    MessageBox.Show("Введите транспорт");
-                    return;
+                    service.AddRecord(form.Result);
+                    RefreshGrid();
                 }
-
-                service.AddRecord(new TransportRecord
-                {
-                    Transport = txtTransport.Text,
-                    Cargo2011 = double.Parse(txtCargo2011.Text),
-                    Cargo2013 = double.Parse(txtCargo2013.Text),
-                    Cargo2015 = double.Parse(txtCargo2015.Text),
-                    Passenger2013 = double.Parse(txtPassenger2013.Text),
-                    Passenger2017 = double.Parse(txtPassenger2017.Text),
-                    Passenger2018 = double.Parse(txtPassenger2018.Text)
-                });
-
-                service.SaveFile();
-                RefreshGrid();
             }
             catch (Exception ex)
             {
@@ -177,22 +165,21 @@ namespace APP
                     return;
                 }
 
-                service.UpdateRecord(dataGridView1.CurrentRow.Index, new TransportRecord
-                {
-                    Transport = txtTransport.Text,
-                    Cargo2011 = double.Parse(txtCargo2011.Text),
-                    Cargo2013 = double.Parse(txtCargo2013.Text),
-                    Cargo2015 = double.Parse(txtCargo2015.Text),
-                    Passenger2013 = double.Parse(txtPassenger2013.Text),
-                    Passenger2017 = double.Parse(txtPassenger2017.Text),
-                    Passenger2018 = double.Parse(txtPassenger2018.Text)
-                });
+                var index = dataGridView1.CurrentRow.Index;
+                var old = service.GetData()[index];
 
-                RefreshGrid();
+                var form = new AddEditForm();
+                form.LoadData(old);
+
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    service.UpdateRecord(index, form.Result);
+                    RefreshGrid();
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ошибка обновления:\n" + ex.Message);
+                MessageBox.Show("Ошибка редактирования:\n" + ex.Message);
             }
         }
 

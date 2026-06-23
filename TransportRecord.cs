@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace APP
 {
-    internal class TransportRecord
+    public class TransportRecord
     {
         public string Transport { get; set; }
 
