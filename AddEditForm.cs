@@ -47,5 +47,67 @@ namespace APP
             DialogResult = DialogResult.OK;
             Close();
         }
+
+        private void txtCargo2011_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) &&
+                e.KeyChar != (char)8 &&   // backspace
+                e.KeyChar != ',' &&       // запятая
+                e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtCargo2013_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) &&
+                e.KeyChar != (char)8 &&   // backspace
+                e.KeyChar != ',' &&       // запятая
+                e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+        }
+        private void txtCargo2015_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) &&
+                e.KeyChar != (char)8 &&   // backspace
+                e.KeyChar != ',' &&       // запятая
+                e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+        }
+        private void txtPassenger2013_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) &&
+                e.KeyChar != (char)8 &&   // backspace
+                e.KeyChar != ',' &&       // запятая
+                e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+        }
+        private void txtPassenger2017_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) &&
+                e.KeyChar != (char)8 &&   // backspace
+                e.KeyChar != ',' &&       // запятая
+                e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+        }
+        private void txtPassenger2018_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) &&
+                e.KeyChar != (char)8 &&   // backspace
+                e.KeyChar != ',' &&       // запятая
+                e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

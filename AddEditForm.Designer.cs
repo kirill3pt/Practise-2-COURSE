@@ -69,6 +69,7 @@
             this.txtCargo2011.Name = "txtCargo2011";
             this.txtCargo2011.Size = new System.Drawing.Size(88, 27);
             this.txtCargo2011.TabIndex = 35;
+            this.txtCargo2011.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCargo2011_KeyPress);
             // 
             // label6
             // 
@@ -207,6 +208,7 @@
             this.txtCargo2013.Name = "txtCargo2013";
             this.txtCargo2013.Size = new System.Drawing.Size(88, 27);
             this.txtCargo2013.TabIndex = 24;
+            this.txtCargo2013.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCargo2013_KeyPress);
             // 
             // txtTransport
             // 
@@ -227,11 +229,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnOk.BackColor = System.Drawing.Color.Ivory;
             this.btnOk.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnOk.Location = new System.Drawing.Point(64, 218);
+            this.btnOk.Location = new System.Drawing.Point(16, 218);
             this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(157, 35);
+            this.btnOk.Size = new System.Drawing.Size(258, 35);
             this.btnOk.TabIndex = 37;
-            this.btnOk.Text = "Добавить запись";
+            this.btnOk.Text = "Добавить/редактировать запись";
             this.btnOk.UseVisualStyleBackColor = false;
             this.btnOk.Click += new System.EventHandler(this.btnOK_Click);
             // 
